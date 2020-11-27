@@ -1,0 +1,253 @@
+.div-rombo-form{
+    width: 100%;
+}
+
+/* Forma Register */
+.rombo {
+    top: 20%;
+    left: 20%;
+    align-items: center;
+    width: 60%; 
+    height: 45rem; 
+    background: none;
+    -webkit-transform: rotate(83deg);
+    -moz-transform: rotate(83deg);
+    -ms-transform: rotate(83deg);
+    -o-transform: rotate(83deg);
+    transform: rotate(83deg);
+    z-index: 10;
+    position: absolute;
+    
+}
+
+.rombo:nth-child(1){
+    color: salmon;
+    z-index: 13;
+    -webkit-transform: rotate(85deg);
+    -moz-transform: rotate(85deg);
+    -ms-transform: rotate(85deg);
+    -o-transform: rotate(85deg);
+    transform: rotate(85deg);
+}
+
+.rombo:nth-child(2){
+    background: white;
+    z-index: 12;
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    transform: rotate(3deg);
+}
+
+.rombo:nth-child(3){
+    background: #32cf01;
+    z-index: 11;
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    transform: rotate(1deg);
+}
+
+.rombo:nth-child(4){
+    background: #23385c;
+    z-index: 10;
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    transform: rotate(2deg);
+}
+
+.div-form-register{
+    padding: 1vh 0;
+}
+
+.hr-home{
+    background-color: #1d7e9b;
+    height: 150px !important;
+    margin-top: 0 !important;
+}
+
+.button-login{
+    background-color: white !important;
+    color: #1d7e9b !important;
+    border-color: #1d7e9b !important;
+    border-width: 0.5vh !important;
+    border-radius: 2vh !important;
+    font-weight: 600 !important;
+}
+
+.button-login:hover{
+    background-color: #1d7e9b !important;
+    border-color: #1d7e9b !important;
+    color: white !important;
+}
+
+
+.h1-register{
+    color: #1d7e9b;
+    font-family: Roboto;
+    font-size: 43.9px;
+    font-weight: 700;
+}
+
+.form-register{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0 25%;
+
+}
+.divIndex{
+    background-color: black;
+}
+
+.form-content{
+    align-items: center;
+}
+
+/*     -webkit-backdrop-filter: blur(10px); 
+backdrop-filter: blur(10px); Chrome and Opera 
+border-radius: 10%;
+border-color: #1d7e9b;
+border-style: solid;
+*/
+
+.form{
+    padding: 4vh;
+    border-radius: 1vh;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+    z-index: 15;
+    position: relative;
+}
+
+.label-register{
+    font-size: 18px;
+    color: #1d7e9b;
+    font-weight: 600;
+    align-items: center;
+}
+
+.form-inputs {
+    margin-bottom: 0.5rem;
+    width: 80%;
+}
+
+.form-inputs p {
+    margin: 0 !important;
+    color:#FA4D24;
+    font-family: Roboto;
+}
+
+.form-input {
+    font-family: Roboto;
+    margin-left: 15%;
+    display: block;
+    outline: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 70%;
+    border: none;
+    border-radius: 2vh;
+    border-color: #a8a8a8;
+    border-style: solid;
+    background-color:white;
+    
+}
+
+.form-input::placeholder {
+    color: #1d7e9b;
+    font-size: 18px;
+    font-family: Roboto;
+}
+/*     background-color:  white !important;
+    border-radius: 2vh !important;
+    border-color: #a8a8a8 !important;
+    border-style: solid !important;
+    border-width: 3px !important;
+*/
+
+.form-control{
+    border-radius: 2vh !important;
+    border: solid #a8a8a8 !important;
+    border-width: 5vh;
+    color: #1d7e9b !important;
+    font-family: Roboto;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    width: 70% !important;
+    text-align: center !important;
+}
+
+
+.form-input-btn {
+    width: 80%;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 2px;
+    background: linear-gradient(
+      90deg,
+      rgb(39, 176, 255) 0%,
+      rgb(0, 232, 236) 100%
+    );
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form-input-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(
+      90deg,
+      rgb(39, 143, 255) 0%,
+      rgb(12, 99, 250) 100%
+    );
+    transition: all 0.4s ease-out;
+}
+
+.form-input-login {
+    font-size: 14.4px;
+    font-weight: 500;
+    font-family: Roboto;
+    margin-top: 10px;
+    width: 80%;
+    text-align: center;
+    color: #1d7e9b;
+}
+
+.form-input-login a {
+    text-decoration: none;
+    color: #FA4D24;
+    font-weight: 600;
+}
+
+/* FormSuccess */
+.form-success{
+    text-align: center;
+    align-items: center;
+    padding: 5vh;
+}
+
+.btnSubmit{
+    background: white;
+    color: #1E7E9C;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #1E7E9C;
+    padding: 5px 10px;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.btnSubmit:hover{
+    color: white;
+    background: #1E7E9C;
+}

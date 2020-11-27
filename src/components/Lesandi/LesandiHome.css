@@ -1,0 +1,288 @@
+/* TITULO HOME LESANDI*/
+.titulo-lesandi{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: #1d7e9b;
+    font-family: roboto;
+    font-weight: 900;
+    font-size: 54.9px;
+    padding: 50px;
+}
+/* FIN */
+
+/* h3 Home */
+.h3-home{
+    text-align: center;
+}
+
+.h3-home h3{
+    font-family: 'Roboto';
+    color: #1d7e9b;
+    font-weight: 600;
+    font-size: 35.2px;
+}
+/* Fin */
+
+/* TIPOGRAFIA  */
+.info-back h3{
+    font-family: Roboto;
+    font-size: x-large !important;
+}
+
+.info-back p{
+    font-family: Roboto;
+    font-size: large !important;
+}
+
+.info-back img{
+    width: 30% !important;
+    height: auto !important;
+}
+
+/* Fin */
+
+/* div izquierdo home  */
+.left-content{
+    width: 70%;
+    height: 500px;
+    float: left;
+    display: inline;
+    text-align-last: center;
+}
+/* Fin */
+
+/* Logo-Home */
+.logo-home{
+    height: 90%;
+    width: auto;
+    animation-name: animationlogo;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes animationlogo{
+    0% {
+        transform:rotate(0deg); 
+    }
+    50% {
+        transform:rotate(5deg); 
+    }
+    75% {
+        transform:rotate(-5deg); 
+    }
+    100% {
+        transform:rotate(0deg); 
+    }
+}
+
+/* Fin Logo-Home */
+
+/* Div logo */
+.div-logo{
+    width: 450px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-widht-height{
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 100;
+}
+
+.img-logo{
+    width: 450px !important;
+    height: 450px !important;
+}
+
+/* Fin Div Logo */
+
+/* div derecho top home */
+.right-content-top{
+    width: 30%;
+    height: 250px;
+    float: right;
+}
+/* Fin */
+
+/*div derecho bottom home */
+.right-content-bottom{
+    width: 30%;
+    height: 250px;
+    float: right;
+}
+/* Fin */
+
+/* boton login en home */
+.button-login-home{
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 2vw;
+    text-align: center;
+    float: right;
+    border-radius: 5vh 0 0 5vh;
+    border-style: solid;
+    padding: 2vh 0 2vh 5vh;
+    margin-top: 150px;
+    height: fit-content;
+    width: 60%;
+    color:  #0077b6;
+    
+}
+
+.button-login-home:hover{
+    background-color:  #0077b6;
+    width: 100%;
+    color: white;
+}
+
+.button-unete-home{
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 2vw;
+    text-align: center;
+    float: right;
+    border-radius: 5vh 0 0 5vh;
+    border-style: solid;
+    border-color: #0077b6;
+    padding: 2vh 0 2vh 5vh;
+    margin-bottom: 150px;
+    height: fit-content;
+    width: 60%;
+    color:  white;
+    background-color: #0077b6;
+}
+
+.button-unete-home:hover{
+    background-color:  #0077b6;
+    width: 100%;
+    color: white;
+}
+
+/* Fin */
+
+/* BURBUJAS ANIMADAS */
+
+.bubble{
+    border-radius: 50%;
+    background: #ff8a2a;
+    opacity: .3;
+    position: absolute;
+    bottom: -150;
+    animation: bubbles 3s linear infinite ;
+}
+
+.bubble:nth-child(1){
+    width: 80px;
+    height: 80px;
+    left: 5%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    z-index: 100;
+}
+
+.bubble:nth-child(2){
+    width: 100px;
+    height: 100px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 5s;
+    z-index: 90;
+}
+
+.bubble:nth-child(3){
+    width: 20px;
+    height: 20px;
+    left: 15%;
+    animation-duration: 1.5s;
+    animation-delay: 7s;
+    z-index: 80;
+}
+
+.bubble:nth-child(4){
+    width: 50px;
+    height: 50px;
+    left: 90%;
+    animation-duration: 6s;
+    animation-delay: 3s;
+    z-index: 70;
+}
+
+.bubble:nth-child(5){
+    width: 70px;
+    height: 70px;
+    left: 65%;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    z-index: 65;
+}
+
+.bubble:nth-child(6){
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+    z-index: 75;
+}
+
+.bubble:nth-child(7){
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+    z-index: 95;
+}
+
+.bubble:nth-child(8){
+    width: 100;
+    height: 100px;
+    left: 52%;
+    animation-duration: 5s;
+    animation-delay: 5s;
+    z-index: 50;
+}
+
+.bubble:nth-child(9){
+    width: 65px;
+    height: 65px;
+    left: 51%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    z-index: 40;
+}
+
+.bubble:nth-child(10){
+    width: 40px;
+    height: 40px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 4s;
+    z-index: 30;
+}
+
+
+@keyframes bubbles{
+    0%{
+        bottom: 0;
+        opacity: 0;
+    }
+    30%{
+        transform: translateX(30px);
+    }
+    50%{
+        opacity: .4;
+    }
+    100%{
+        bottom: 100vh;
+        opacity: 0;
+    }
+}
+
+p{
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 14.4px;
+}
