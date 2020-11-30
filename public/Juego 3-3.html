@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="Hover-master/css/hover.css" rel="stylesheet" media="all">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tercero de primaria</title>
+
+    <style>
+        h1{
+            text-align: center;
+            font-family: 'roboto';
+        }
+
+        .Foto{
+            margin-top: 5%;
+            text-align: center;
+        }
+
+        .Right button {
+            background: #32cf01 !important;
+        }
+
+        .Wrong button {
+            background: red !important;
+        }
+        img{
+            height: 75px;
+            width: 75px;
+
+        }
+        .Answ{
+            margin-top: 5%;
+            display: flex;
+	        justify-content: center;
+          	align-items: center;
+	        flex-direction: column;
+        }
+        .ans{
+        width: 65%;
+        
+        }
+        .Sub {
+           background-color: #02a88d; 
+            color: white;
+            text-align: center;            
+            font-size: 15px;
+            align-items: center;
+            width: 20%;
+            cursor: pointer;
+            font-family: 'roboto';
+            margin-left: 6%;
+        }
+        .contResp{
+            width: 120%;
+            float: right;
+        }
+        .sig{   
+            border-radius: 10px;
+             width: 20%;
+             height: 15%;
+             margin-right: 5%;
+             margin-top: 5%;
+             float: right;
+             background-color: #23385c;
+             color: white;
+             font-family: 'roboto';
+             cursor: pointer;
+        }
+        .Contadores{
+            display: inline-block;
+            margin-top: 3%;
+            width: 50%;
+            font-family: 'roboto';
+            
+        }
+        .RightCSS{
+            display: inline-flex;
+            margin: 5%;
+            
+        }
+        .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    width: 85%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+}
+
+.popup h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: #E5F720;
+}
+
+.popup .content-1{
+    max-height: 30%;
+    overflow: auto;
+    text-align: center;
+}
+
+.show {
+    visibility: visible !important;
+    opacity: 100 !important;
+}
+
+#starRating li {
+    display: inline-block;
+}
+
+#next-level {
+    background-color:#23385c;
+    padding: 0.7rem 1rem;
+    font-size: 1.1rem;
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.tabla{
+    width: 25%;
+    background: white;
+    border-radius: 1px;
+    box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.Contenedor {
+
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    flex-direction: column;
+    
+}
+        li{
+            width: 50%;
+            height: 20%;
+           margin: 10%;
+            float: left;
+            list-style: none;
+        }
+
+    input[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid red;
+}
+.myForm{
+    width:25%;
+}
+
+    </style>
+</head>
+<body>
+<h1>Responde las siguientes preguntas</h1>
+
+<div class = "Contenedor">
+    <div class="tabla">
+        
+    <div class="Frases"></div>
+    <div class="Question"></div>
+
+    </div> 
+</div>
+
+    <div class="Answ">
+
+        <form name = "myForm" class = "myForm"> 
+            <input type="text" name="fname" id="box">
+            <input type="button" onclick="EvaluateAnswers()" value="submit" id="Sub" class="Sub hvr-grow">
+        </form> 
+
+    </div>
+    
+    <button onclick="nextQuestion()" id = "siguiente" class="sig hvr-grow-rotate">Siguiente Pregunta</button>
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Felicidades!!</h2>
+            <a class="close" href=# >×</a>
+            <div class="content-1">
+                ¡Felicitaciones! Este es tu primer paso para convertirte en un lector.
+            </div>
+            <br>
+            <button id="next-level"onclick="">
+                Regresar al menú</a>
+            </button>
+        </div>
+    </div>
+
+  
+    <div class="Contadores">
+    <p class="RightCSS">Respuestas Correctas: <span class = "Rightc">0</span></p>
+
+    <p class="RightCSS">Respuestas Incorrectas: <span class ="Wrongc">0</span></p>
+</div>
+    <script>
+        const Id = document.getElementById('Id');
+        let modal = document.getElementById("popup1");
+        let RightAnswers;
+        let currentPosition = 0; 
+        let correcto =0;
+        let incorrecto =0;
+        var contR=0;
+        var sig=false;
+        
+
+        var Cuestionary = [
+            {"Frase" : ["Lola olía la lila"],
+            "Question": ["¿Qué olía lola?"],
+            "Respuesta": "lila" 
+            },
+            {"Frase" : ["La momia olía mal"],
+            "Question": ["¿Cómo olía la momia?"],
+            "Respuesta": "mal" 
+            }
+            ,
+            {"Frase" : ["Ese oso se asea al sol"],
+            "Question": ["¿Quién se asea?"],
+            "Respuesta": "oso" 
+            }
+            ,
+            {"Frase" : ["Mateo mete tu maleta"],
+            "Question": ["¿Qué mete Mateo?"],
+            "Respuesta": "maleta" 
+            }
+            ,
+            {"Frase" : ["Mi tía Pili lee el mapa"],
+            "Question": ["¿Quién lee?"],
+            "Respuesta": "pili" 
+            }                 
+        ];
+        const preguntaRandom = _ =>{
+            Cuestionary = Cuestionary.sort((a,b) => Math.floor(Math.random()* 2) -1);
+        }
+
+        const nextQuestion = _ => {
+            document.getElementById("box").value="";
+            currentPosition++;
+            printHTMLQuestion(currentPosition);
+        }
+        
+        const printHTMLQuestion = (currentPosition) => {   
+            document.getElementById('Sub').disabled = false;
+            document.getElementById('siguiente').disabled = true;
+            sig=false;
+            let q = Cuestionary[currentPosition];
+            let pregActual = q.Question;
+            let fraseActual = q.Frase;
+            let respuestaActual = q.Respuesta;
+
+            const fraseHTMLArray = fraseActual.map( fHTML => `<p>${fHTML}</p>`);
+            const HTMLfrase = fraseHTMLArray.join(' '); 
+            let HTMLF = `<div class= "fr">${HTMLfrase}</div>`;
+            document.querySelector('.Frases').innerHTML = HTMLF;
+
+            const pregHTMLArray = pregActual.map( pregHTML => `<p>${pregActual}</p>`);
+            const HTMLpreg = pregHTMLArray.join(' '); 
+            let HTMLP = `<div class= "pr">${HTMLpreg}</div>`;
+            document.querySelector('.Question').innerHTML = HTMLP;
+        }
+
+        const EvaluateAnswers = () => {
+            document.querySelectorAll('.ans').forEach( a => a.classList.remove('Wrong'));
+            //const parentP = obj.parentNode;
+            var q = Cuestionary[currentPosition];
+            let r = q.Respuesta;
+            var nombrevariable = document.forms["myForm"]["fname"].value;
+            r=r.toLowerCase();
+            nombrevariable=nombrevariable.toLowerCase();
+            var n = nombrevariable.indexOf(r);
+            console.log(n + " " + nombrevariable + " " + r  + " " + currentPosition);
+            if(n>-1){ 
+                    document.getElementById('Sub').disabled = true;
+                    correcto++;
+                    sig=true;
+                    document.querySelector('.Rightc').innerHTML = correcto;
+
+                if(sig)
+                    document.getElementById('siguiente').disabled = false;
+
+                 if(correcto==5){
+                 modal.classList.add("show"); // Aqui termina el Juego, redireccionar a la pagina principal 
+                 closeModal();
+                 }
+
+                }
+                    else if(nombrevariable!=""){
+                    incorrecto++;
+                    document.querySelector('.Wrongc').innerHTML = incorrecto; 
+                }
+        }
+        preguntaRandom();
+        printHTMLQuestion(currentPosition); //Seleccionamos la pregunta #.
+        
+        function closeModal(){
+    closeicon.addEventListener("click", function(e){
+        modal.classList.remove("show");
+        startGame();
+    });
+}
+    </script>
+  
+
+</body>
+</html>

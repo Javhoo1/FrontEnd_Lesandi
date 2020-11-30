@@ -87,7 +87,7 @@
 
 
 .h1-register{
-    color: #1d7e9b;
+    color: #fa4d24;
     font-family: Roboto;
     font-size: 43.9px;
     font-weight: 700;
@@ -240,7 +240,7 @@ border-style: solid;
     color: #1E7E9C;
     border-radius: 10px;
     border-style: solid;
-    border-color: #1E7E9C;
+    border-color: #fa4d24;
     padding: 5px 10px;
     font-family: Roboto;
     font-weight: 700;
@@ -249,5 +249,5 @@ border-style: solid;
 
 .btnSubmit:hover{
     color: white;
-    background: #1E7E9C;
+    background: #fa4d24;
 }

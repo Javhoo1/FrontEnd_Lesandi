@@ -1,4 +1,3 @@
-import { shallowEqual } from "react-redux";
 import { fetchSinToken,fetchConToken } from "../components/helpers/fetch"
 import { types } from '../types/types';
 import Swal from 'sweetalert2';
