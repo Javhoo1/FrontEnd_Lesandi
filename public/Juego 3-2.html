@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link href="Hover-master/css/hover.css" rel="stylesheet" media="all">
@@ -164,7 +166,8 @@
     display: block;
     margin: 0 auto;
     width: 50%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nerko one', cursive;
+    text-decoration: none;
     color: #ffffff;
     border-radius: 5px;
     cursor: pointer;
@@ -187,15 +190,56 @@
         .Question{
             /*width: 30%;*/
             margin: auto;
+            font-family: "Nerko one", cursive;
+            font-weight: 500;
+            font-size: 7vh;
+            color: #1E7E9C;
         }
         .Contenedor{
             margin-left: 29%;
         
         }
 
+        .btn-navbar{
+    text-decoration: none;
+    background: white;
+    color: #1E7E9C;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #1E7E9C;
+    padding: 5px 10px;
+    font-family: "Nerko one", cursive;
+    font-weight: 700;
+    font-size: x-large;
+    margin: 2vh;
+}
+
+.btn-navbar:hover{
+    color: white;
+    background: #1E7E9C;
+}
+
+.span-lesandi{
+    text-decoration: none;
+    color: #1E7E9C;
+    padding: 5px 10px;
+    font-family: "Nerko one", cursive;
+    font-weight: 700;
+    font-size: x-large;
+    
+    float: right;
+}
     </style>
 </head>
 <body>
+    <div className="navbar  mb-4">
+        <a    
+            href="/games"
+            class="btn-navbar">
+                Inicio
+        </a>
+        <a href="#" class="span-lesandi"> Lesandi <a/>
+    </div>
 <h1>Selecciona las frases verdaderas</h1>
 
 <div class = "Contenedor">
@@ -218,8 +262,9 @@
                 ¡Felicitaciones! Este es tu primer paso para convertirte en un lector.
             </div>
             <br>
+            <a href="Juego 3-3.html"
             <button id="next-level"onclick="">
-                Regresar al menú</a>
+                Siguiente nivel</a>
             </button>
         </div>
     </div>

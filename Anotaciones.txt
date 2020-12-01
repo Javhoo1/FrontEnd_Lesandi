@@ -1,6 +1,4 @@
-Cambiar estructura home
 Cambiar colores (a naranja) login y register
-Probar otras fuentes "nerko one" google fonts, solo titulos y botones
 
 Mstrar juegos: cambiar color numeros (naranja)
         cambiar frase "selecciona tu nivel"

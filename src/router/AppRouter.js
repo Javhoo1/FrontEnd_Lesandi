@@ -16,6 +16,7 @@ import { startChecking } from '../actions/auth';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 
+
 export const AppRouter = () => {
 
     const dispatch = useDispatch();
@@ -61,6 +62,7 @@ export const AppRouter = () => {
                         component={ LesandiScreen } 
                         isAuthenticated= { !!uid } //Convertir String en boolean
                         />  
+
 
                     <Redirect to="/games" />
                 </Switch>

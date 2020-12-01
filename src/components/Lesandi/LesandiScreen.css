@@ -1,50 +1,42 @@
 .div-titulo{
     align-items: center;
     text-align: center;
-    margin: 40px;
+    margin: 6vh;
 }
 
 .div-titulo p{
-    font-family: Roboto;
-    font-weight: 600;
-    font-size: 54.9px;
+    font-family: "Nerko one", cursive;
+    font-weight: 500;
+    font-size: 8vh;
     color: #1E7E9C;
 }
 
 .div-games-left{
-    width: 32%;
+    width: 33vw;
     height: auto;
     display: inline-flex;
     float: left;
-    margin: 2rem 1% 2rem 0;
     text-align: center;
     place-content: center;
 }
 
 
 .div-games-center{
-    width: 32%;
+    width: 33vw;
     height: auto;
     display: inline-flex;
     text-align: center;
     place-content: center;
-    margin: 2rem 1% 2rem 1%;
 }
 
 .div-games-right{
-    width: 32%;
+    width: 33vw;
     height: auto;
     float: right;
     display: inline;
-    margin: 2rem 0 2rem 1%;
     text-align: center;
     display: inline-flex;
     place-content: center;
-}
-
-.div-circle{
-    width: 100% !important;
-    height: fit-content !important;
 }
 
 .button-games{
@@ -53,39 +45,9 @@
     border-style: solid;
     border-width: 3px;
     color: white !important;
-    padding: 5px;
+    padding: 1vh 3vw;
     bottom: 0;
 }
-
-.div-img{
-    background: #1E7E9C;
-    width: 50% !important;
-    height: none !important;
-
-    align-content: center;
-    margin: 20px 20%;
-}
-
-.div-info{
-    background: #1E7E9C !important;
-    width: 50% !important;
-    height: none !important;
-    align-content: center;
-    margin: 20px 20%;
-    overflow: hidden;
-}
-
-.div-info h3{
-    font-size: 14px !important;
-    font-family: Roboto;
-}
-
-.div-info p{
-    color: white !important;
-    font-size: 12px !important;
-    font-family: Roboto;
-}
-
 
 /* CSS NavbarRest */
 .navbar-span{
@@ -111,3 +73,4 @@
     color: white;
     background: #1E7E9C;
 }
+

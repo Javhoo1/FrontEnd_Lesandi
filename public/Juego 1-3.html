@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link href="Hover-master/css/hover.css" rel="stylesheet" media="all">
@@ -13,11 +15,18 @@
     <style>
         h1{
             text-align: center;
-            font-family: 'roboto';
+            font-family: 'Nerko one', cursive;
+            font-weight: 500;
+            font-size: 7vh;
+            color:#1E7E9C;
         }
         .Question{
             width: 90%;
             margin: auto;
+            font-family: "Nerko one", cursive;
+            font-weight: 500;
+            font-size: 7vh;
+            color: #1E7E9C;
         }
         .Foto{
             margin-top: 5%;
@@ -124,7 +133,7 @@
     text-align: center;
     margin-top: 0;
     color: #333;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nerko one', cursive;
 }
 
 .popup .close {
@@ -164,17 +173,53 @@
     display: block;
     margin: 0 auto;
     width: 50%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nerko one', cursive;
     color: #ffffff;
     border-radius: 5px;
     cursor: pointer;
 }
 
+.btn-navbar{
+    text-decoration: none;
+    background: white;
+    color: #1E7E9C;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #1E7E9C;
+    padding: 5px 10px;
+    font-family: "Nerko one", cursive;
+    font-weight: 700;
+    font-size: x-large;
+    margin: 2vh;
+}
 
+.btn-navbar:hover{
+    color: white;
+    background: #1E7E9C;
+}
+
+.span-lesandi{
+    text-decoration: none;
+    color: #1E7E9C;
+    padding: 5px 10px;
+    font-family: "Nerko one", cursive;
+    font-weight: 700;
+    font-size: x-large;
+    
+    float: right;
+}
     </style>
 </head>
 <body>
-<h1>Con que sílaba empieza la siguiente imagen</h1>
+    <div className="navbar  mb-4">
+        <a    
+            href="/games"
+            class="btn-navbar">
+                Inicio
+        </a>
+        <a href="#" class="span-lesandi"> Lesandi <a/>
+    </div>
+<h1>¿Con qué sílaba comienza la siguiente imagen?</h1>
     <div class="Question"> 
     
     </div>
@@ -190,7 +235,7 @@
                 ¡Felicitaciones! Este es tu primer paso para convertirte en un lector.
             </div>
             <br>
-
+            <a href="/src/components/Lesandi/LesandiScreen.js">
             <button id="next-level"onclick="">
                 Regresar al menú</a>
             </button>

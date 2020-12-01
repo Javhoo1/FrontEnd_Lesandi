@@ -1,7 +1,12 @@
+
+
+
 <!-- Detalle: Solo hay 3 respuestas correctas, se pueden agregar pero hay que asegurar que siempre se tengan 3 en cadaa juego-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link href="Hover-master/css/hover.css" rel="stylesheet" media="all">
@@ -13,7 +18,10 @@
 
         .Question{
             text-align: center;
-            font-family: 'roboto';
+            font-family: "Nerko one", cursive;
+            font-weight: 500;
+            font-size: 7vh;
+            color: #1E7E9C;
         }
 
         p{
@@ -166,6 +174,7 @@
 
 
 #next-level {
+    text-decoration: none;
     background-color:#23385c;
     padding: 0.7rem 1rem;
     font-size: 1.1rem;
@@ -178,9 +187,47 @@
     cursor: pointer;
 }
 
+.btn-navbar{
+    text-decoration: none;
+    background: white;
+    color: #1E7E9C;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #1E7E9C;
+    padding: 5px 10px;
+    font-family: "Nerko one", cursive;
+    font-weight: 700;
+    font-size: x-large;
+    margin: 2vh;
+}
+
+.btn-navbar:hover{
+    color: white;
+    background: #1E7E9C;
+}
+
+.span-lesandi{
+    text-decoration: none;
+    color: #1E7E9C;
+    padding: 5px 10px;
+    font-family: "Nerko one", cursive;
+    font-weight: 700;
+    font-size: x-large;
+    
+    float: right;
+}
+
     </style>
 </head>
 <body>
+    <div className="navbar  mb-4">
+        <a    
+            href="/games"
+            class="btn-navbar">
+                Inicio
+        </a>
+        <a href="#" class="span-lesandi"> Lesandi <a/>
+    </div>
     <div class="Question"> 
 
     </div>
@@ -202,20 +249,20 @@
     <div id="popup1" class="overlay">
         <div class="popup">
             <h2>Felicidades!!</h2>
-            <a class="close" href=# >×</a>
+            <a class="close" href="#" >×</a>
             <div class="content-1">
                 ¡Felicitaciones! Este es tu primer paso para convertirte en un lector.
             </div>
             <br>
-
-            <button id="next-level" onclick="">
-                Regresar al menú</a>
+            <a href="Juego 1-2.html">
+            <button id="next-level" href="Juego 1-2.html">
+                Siguiente Nivel</a>
             </button>
         </div>
     </div>
 
     <script>
-
+        
         let RightAnswers;
         let currentPosition = 0; 
         let correcto =0;
