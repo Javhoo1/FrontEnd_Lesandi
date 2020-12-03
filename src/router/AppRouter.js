@@ -39,7 +39,8 @@ export const AppRouter = () => {
                     <PublicRoute
                         exact
                         path="/"
-                        component= { LesandiHome }  
+                        component= { LesandiHome }
+                        isAuthenticated= { !!uid }  
                         />
 
                     <PublicRoute 
