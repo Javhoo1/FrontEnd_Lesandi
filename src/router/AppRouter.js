@@ -17,6 +17,8 @@ import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 
 
+/* FIN JUEGOS */
+
 export const AppRouter = () => {
 
     const dispatch = useDispatch();
@@ -41,29 +43,29 @@ export const AppRouter = () => {
                         path="/"
                         component= { LesandiHome }
                         isAuthenticated= { !!uid }  
-                        />
+                    />
 
                     <PublicRoute 
                         exact 
                         path="/login" 
                         component={ LoginScreen } 
                         isAuthenticated= { !!uid } //Convertir String en boolean
-                        />
+                    />
                     
                     <PublicRoute 
                         exact 
                         path="/register" 
                         component={ RegisterScreen } 
                         isAuthenticated= { !!uid } //Convertir String en boolean
-                        />
+                    />
 
                     <PrivateRoute 
                         exact 
                         path="/games" 
                         component={ LesandiScreen } 
                         isAuthenticated= { !!uid } //Convertir String en boolean
-                        />  
-
+                    />  
+                    
 
                     <Redirect to="/games" />
                 </Switch>

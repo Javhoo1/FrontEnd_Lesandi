@@ -32,7 +32,7 @@ export const RegisterScreen = () => {
             return Swal.fire('Error', 'Contraseñas no coinciden', 'error');
         }
         console.log('?');
-        dispatch( startRegister( rUserName, rName, rPassword1, rGrade) );
+        dispatch( startRegister( rUserName, rName, rPassword1, rGrade, rInstitution) );
     }
 
     return (

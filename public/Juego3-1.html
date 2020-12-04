@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link href="Hover-master/css/hover.css" rel="stylesheet" media="all">
@@ -35,10 +35,7 @@
         }
         h1{
             text-align: center;
-            font-family: 'Nerko one', cursive;
-            font-weight: 500;
-            font-size: 7vh;
-            color: #1E7E9C;
+            font-family: 'roboto';
         }
         li{
             width: 20%;
@@ -80,7 +77,7 @@
           
         }
         .ans{
-        width: 20%;
+        width: 16%;
         display: inline;
         }
         .ans button {
@@ -164,14 +161,14 @@
     width: 85%;
     position: relative;
     transition: all 5s ease-in-out;
-    font-family: 'Nerko one', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 
 .popup h2 {
     text-align: center;
     margin-top: 0;
     color: #333;
-    font-family: 'Nerko one', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 
 .popup .close {
@@ -204,10 +201,7 @@
     display: inline-block;
 }
 
-
 #next-level {
-    text-decoration: none;
-    color: #1E7E9C;
     background-color:#23385c;
     padding: 0.7rem 1rem;
     font-size: 1.1rem;
@@ -215,6 +209,7 @@
     margin: 0 auto;
     width: 50%;
     font-family: 'Nerko one', cursive;
+    text-decoration: none;
     color: #ffffff;
     border-radius: 5px;
     cursor: pointer;
@@ -260,7 +255,7 @@
         </a>
         <a href="#" class="span-lesandi"> Lesandi <a/>
     </div>
-<h1>¿Con qué vocal inician las siguientes imágenes?</h1>
+<h1> Escribe la frase en el orden correcto </h1>
 
     <div clas = "Contenedor">
         <div class="tabla">
@@ -290,9 +285,9 @@
                     ¡Felicitaciones! Este es tu primer paso para convertirte en un lector.
                 </div>
                 <br>
-                <a href="Juego 1-3.html">
-                <button id="next-level">
-                    Siguiente Nivel</a>
+                <a href="juego3-2.html">
+                <button id="next-level"onclick="">
+                    Siguiente nivel</a>
                 </button>
             </div>
         </div>
@@ -302,99 +297,117 @@
         let correcto =0;
         let incorrecto =0;
         var cont =0;
-        var pasado = [];
-        var letra= [0, 1, 2, 3, 4]; // A=0, E=1, I=2 ...
-        var Respuestas= ['A', 'E', 'I', 'O', 'U'];
+        var currentPos =0;
+        var currentPosRespuestas=0;
+        var respUsuario="Frase: ";
+       // var letra= [0, 1, 2, 3, 4]; // A=0, E=1, I=2 ...
         let modal = document.getElementById("popup1");
-        var currentPosition=0;
         
 
-        const Cuestionary = [
+        var Cuestionary = [
 
-            {"Question" : "Selecciona la imagen que inicie con la vocal 'A'.",
-                "Answers": ["Ardilla", "Armadillo", "Agua", "Abeja", "Araña", "Avion", "Auto", "Anillo",] //Objetos con las imagenes tenemos que remplazar.
-                
+            {"Question" : ["Yo", "veo", "nubes", "en", "el", "cielo"],
+                "Answers": ["Yo", "veo", "nubes", "en", "el", "cielo"], //Objetos con las imagenes tenemos que remplazar.
+                "Size" : "6"
             },
 
-            {"Question" : "Selecciona la imagen que inicie con la vocal 'E'.",
-                "Answers": ["Escuela", "Espejo", "Elefante", "Estrella"]//Objetos con las imagenes tenemos que remplazar.
+            {"Question" : ["Lola", "lee", "el", "papel"],
+                "Answers": ["Lola", "lee", "el", "papel"], //Objetos con las imagenes tenemos que remplazar.
+                "Size" : "4"
             },
 
-            {"Question" : "Selecciona la imagen que inicie con la vocal 'I'.",
-                "Answers": ["Iguana", "Iglesia", "Iman", "Iglu", "Indio", "Isla"] //Objetos con las imagenes tenemos que remplazar
+            {"Question" : ["Susi", "pisa", "las", "flores"],
+                "Answers": ["Susi", "pisa", "las", "flores"], //Objetos con las imagenes tenemos que remplazar
+                "Size" : "4"
             },
 
-            {"Question" : "Selecciona la imagen que inicie con la vocal 'O'.",
-                "Answers": ["Oveja", "Oreja", "Ovni", "Olla", "Ojo", "Ola", "Ocho", "Oso", "Oruga"] //Objetos con las imagenes tenemos que remplazar.
+            {"Question" : ["La", "paloma", "es", "mia"],
+                "Answers": ["La", "paloma", "es", "mia"], //Objetos con las imagenes tenemos que remplazar.
+                "Size" : "4"
             },
 
-            {"Question" : "Selecciona la imagen que inicie con la vocal 'U'.",
-                "Answers": ["Uno", "Uva", "Unicornio", "Uña", "Uniforme", "Utiles", "Urraca"] //Objetos con las imagenes tenemos que remplazar.
-            }
-            
+            {"Question" : ["Mi", "abuela", "Marta", "es", "alemana"],
+                "Answers": ["Mi", "abuela", "Marta", "es", "alemana"], //Objetos con las imagenes tenemos que remplazar.
+                "Size" : "5"
+            }     
         ];
 
         const nextQuestion = _ => {
-            currentPosition++;
-            printHTMLQuestion(letra[currentPosition]);
+            printHTMLQuestion(currentPos);
         }
         
-        const preguntaRandom = (letra) =>{
-            letra = letra.sort((a,b) => Math.floor(Math.random()* 2) -1);
+    const preguntaRandom = _ =>{
+            Cuestionary = Cuestionary.sort((a,b) => Math.floor(Math.random()* 2) -1);
         }
-        const printHTMLQuestion = (i) => {
-            
-            document.getElementById('siguiente').disabled = true;
-            const q = Cuestionary[letra[currentPosition]];
-            let a = q.Answers;
-            a = a.sort((a,b) => Math.floor(Math.random()* 3) -1);
-            var imagenes= [a[0], a[1], a[2], a[3]];
-           // var img1="/imagenes/" +  a[0]  + ".jpg";
-            //console.log(img1);
-           // document.getElementById("PRUEBA").src = img[1]; 
-            const HTMLAnswersArray = imagenes.map( CurrentA => `<li class="imagenes"> <div><img  src="imagenes/${CurrentA}.jpg" /> </div></li>`); 
-            const HTMLRespuestasPosibles = Respuestas.map( CurrentR => `<p class="ans"><button class="hvr-pulse"onClick="EvaluateAnswers('${CurrentR}', this)">${CurrentR}</button> </p>`); //Se establece la respuesta correcta de la pregunta
-            const HTMLRespuestas = HTMLRespuestasPosibles.join(' ');
-            const HTMLAnswers = HTMLAnswersArray.join(' ');
-            
 
-            let HTMLQuestionCode = `<p>${HTMLAnswers}</p>`;
-            let HTMLAnswersCode = `<div class="contResp">${HTMLRespuestas}</div>`
-            document.querySelector('.Question').innerHTML = HTMLQuestionCode; 
+        const printHTMLQuestion = (i) => {
+            respUsuario ="Frase: ";
+            let HTMLP = `<p>${respUsuario}</p>`;
+            document.querySelector('.Question').innerHTML = HTMLP; 
+
+
+            document.getElementById('siguiente').disabled = true;
+            //preguntaRandom(letra);
+            //respUsuario="";
+            currentPosRespuestas=0;
+            const q = Cuestionary[currentPos];
+            let a = q.Answers;
+            var pre = q.Question;
+            a = a.sort((a,b) => Math.floor(Math.random()* 2) -1);
+            //const HTMLPregunta= pre.map( CurrentQ => `<p class="Quest">${CurrentQ}</p>`);
+            const HTMLRespuestasPosibles = a.map( CurrentR => `<p class="ans"><button class="hvr-pulse"onClick="EvaluateAnswers('${CurrentR}', this)">${CurrentR}</button> </p>`); //Se establece la respuesta correcta de la pregunta
+            const HTMLRespuestas = HTMLRespuestasPosibles.join(' ');
+
+            //const HTMLQuestion = HTMLPregunta.join(' ');
+            //let HTMLQuestionCode = `<p>${HTMLQuestion}</p>`;
+
+            let HTMLAnswersCode = `<div class="contResp">${HTMLRespuestas}</div>`;
+
+           // document.querySelector('.Question').innerHTML = HTMLQuestionCode; 
             document.querySelector('.A').innerHTML =HTMLAnswersCode;
         }
 
+
         const EvaluateAnswers = (Answers, obj) => {
             document.querySelectorAll('.ans').forEach( a => a.classList.remove('Wrong'));
-
             const parentP = obj.parentNode;
-            var indice =0;
-           // console.log('Answers: ' + Answers + ', RightAnswers: ' + RightAnswers + '  ' + letra[currentPosition] )
-            if(Answers == Respuestas[letra[currentPosition]]) {
+            var q=Cuestionary[currentPos];
+            var r=q.Question;
+            var s= q.Size;
+            console.log(Answers + " : " + r[currentPosRespuestas] + " = " + currentPos + "  =  " + currentPosRespuestas + " " + s + "  /  " + currentPosRespuestas);
+            if(Answers == r[currentPosRespuestas]) {
                 if(parentP.classList.contains('Right')){
                     
                 }
                 else{
-                 parentP.classList.add('Right');
+                respUsuario = respUsuario + " " + r[currentPosRespuestas];
+                let HTMLPalabra = `<p>${respUsuario}</p>`;
+                document.querySelector('.Question').innerHTML = HTMLPalabra; 
+                parentP.classList.add('Right');
                 correcto++;
                 document.querySelector('.Rightc').innerHTML = correcto;
+                currentPosRespuestas++;
                 }
-                if(correcto>=1)
+                if(currentPosRespuestas==s){
                     document.getElementById('siguiente').disabled = false;
-                 if(correcto==3){
+                    currentPos++;
+                }
+                 if(currentPos==5){
                  modal.classList.add("show");  // Aqui termina el Juego, redireccionar a la pagina principal 
                  closeModal();
                  }
             }
-                else {
+                else if(!parentP.classList.contains('Right')){
                     parentP.classList.add('Wrong');
                     incorrecto++;
                     document.querySelector('.Wrongc').innerHTML = incorrecto;
                     
                 }
         }
-        preguntaRandom(letra);
-        printHTMLQuestion(0); //Seleccionamos la pregunta #.
+        
+        preguntaRandom();
+        printHTMLQuestion(currentPos); //Se inicia la primera pregunta
+
         function closeModal(){
     closeicon.addEventListener("click", function(e){
         modal.classList.remove("show");
@@ -403,9 +416,6 @@
 }
 
     </script>
-
-
-
 
 </body>
 </html>
