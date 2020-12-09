@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Rimas</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Permanent+Marker" >
+    <link rel="stylesheet" href="app.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">      
+</head>
+<body>
+
+    <div class="container">
+        <div class="divnavbar">
+            <a href="games" class="volver"><i class="fa fa-arrow-left" aria-hidden="true"></i>Volver</a>
+            <span class="lesandi">Lesandi</span>
+        </div>
+        
+        <div class="titulo">Selecciona las palabras que rimen entre si.</div>
+
+        <section class="score-panel">
+        	<ul class="stars">
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        	</ul>
+
+        	<span class="moves">0 </span> Movimientos
+
+            <div class="timer">
+            </div>
+
+            <div class="restart" onclick=startGame()>
+        		<i class="fa fa-repeat"></i>
+        	</div>
+        </section>
+
+        <ul class="deck" id="card-deck">
+            <li class="card" type="ma">
+                <img src="img/Cama.png" alt="Cama">
+            </li>
+            <li class="card" type="ja">
+                <img src="Img/Bee.png" alt="Bee">
+            </li>
+            <li class="card match" type="ja">
+                <img src="Img/Oveja.png" alt="Oveja">
+            </li>
+            <li class="card" type="pa" >
+                <img src="Img/Tapa.png" alt="Tapa">
+            </li>
+            <li class="card" type="pa">
+                <img src="Img/Mapa.png" alt="Mapa">
+            </li>
+            <li class="card match" type="sa">
+                <img src="Img/Casa.png" alt="Casa">
+            </li>
+            <li class="card" type="sa">
+                <img src="Img/Taza.png" alt="Taza">
+            </li>
+            <li class="card" type="to">
+                <img src="Img/Pato.png" alt="Pato">
+            </li>
+            <li class="card" type="ma">
+                <img src="Img/Rama.png" alt="Rama">
+            </li>
+            <li class="card" type="to">
+                <img src="Img/Gato.png" alt="Gato">
+            </li>
+            <li class="card" type="rro">
+                <img src="Img/Zorro.png" alt="Zorro">
+            </li>
+            <li class="card" type="rro">
+                <img src="Img/Gorro.png" alt="Gorro">
+            </li>
+            <li class="card open show" type="na">
+                <img src="Img/Campana.png" alt="Campana">
+            </li>
+            <li class="card" type="na">
+                <img src="Img/Manzana.png" alt="Manzana">
+            </li>
+            <li class="card" type="no">
+                <img src="Img/Gusano.png" alt="Gusano">
+            </li>
+            <li class="card" type="no">
+                <img src="Img/Mano.png" alt="Mano">
+            </li>
+        </ul>
+
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2>Felicidades!!</h2>
+                <a class="close" href=# >×</a>
+                <div class="content-1">
+                    Felicidades Te estas convirtiendo en un buen lector!
+                </div>
+                <br>
+                <button id="play-again"onclick="playAgain()">
+                    Jugar otra vez!</a>
+                </button>
+                <br>
+                <a href="../games" id="next-level" class="siguiente">
+                    Volver al menú</a>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

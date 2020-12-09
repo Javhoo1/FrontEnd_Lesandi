@@ -1,0 +1,392 @@
+<!-- Detalle hay que evitar que se repitan las preguntas-->
+<!-- Detalle: Solo hay 3 respuestas correctas, se pueden agregar pero hay que asegurar que siempre se tengan 3 en cadaa juego-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="Hover-master/css/hover.css" rel="stylesheet" media="all">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primero de Primaria</title>
+
+    <style>
+        h1{
+            text-align: center;
+            font-family: 'roboto';
+        }
+        .Question{
+            width: 90%;
+            margin: auto;
+            font-family: "Nerko one", cursive;
+            font-weight: 500;
+            font-size: 7vh;
+            color: #1E7E9C;
+        }
+        .Foto{
+            margin-top: 5%;
+            text-align: center;
+        }
+
+        .Right button {
+            background: #32cf01 !important;
+        }
+
+        .Wrong button {
+            background: red !important;
+        }
+        img{
+            height: 200px;
+            width: 200px;
+            margin-right: 7%;
+            margin-left: 7%;
+
+        }
+        .Answ{
+            display: inline-block;
+            margin-top: 2%;
+            width: 100%;
+            
+          
+        }
+        .ans{
+        width: 20%;
+        display: inline;
+        }
+        .ans button {
+           background-color: #02a88d; 
+            color: white;
+            text-align: center;            
+            font-size: 24px;
+            align-items: center;
+            display: inline-block;
+            width: 90%;
+            height: 90%;
+            cursor: pointer;
+            font-family: 'roboto';
+        }
+        .contResp{
+            width: 75%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+        .sig{   
+            border-radius: 10px;
+             width: 20%;
+             height: 15%;
+             margin-right: 5%;
+             margin-top: 5%;
+             float: right;
+             background-color: #23385c;
+             color: white;
+             font-family: 'roboto';
+             cursor: pointer;
+        }
+        .Contadores{
+            display: inline-block;
+            margin-top: 3%;
+            width: 50%;
+            font-family: 'roboto';
+            
+        }
+        .RightCSS{
+            display: inline-flex;
+            margin: 5%;
+            
+        }
+        .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    width: 85%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+}
+
+.popup h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: #E5F720;
+}
+
+.popup .content-1{
+    max-height: 30%;
+    overflow: auto;
+    text-align: center;
+}
+
+.show {
+    visibility: visible !important;
+    opacity: 100 !important;
+}
+
+#starRating li {
+    display: inline-block;
+}
+
+
+#next-level {
+    background-color:#23385c;
+    padding: 0.7rem 1rem;
+    font-size: 1.1rem;
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-navbar{
+    text-decoration: none;
+    background: white;
+    color: #1E7E9C;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #1E7E9C;
+    padding: 5px 10px;
+    font-family: "Nerko one", cursive;
+    font-weight: 700;
+    font-size: x-large;
+    margin: 2vh;
+}
+
+.btn-navbar:hover{
+    color: white;
+    background: #1E7E9C;
+}
+
+.span-lesandi{
+    text-decoration: none;
+    color: #1E7E9C;
+    padding: 5px 10px;
+    font-family: "Nerko one", cursive;
+    font-weight: 700;
+    font-size: x-large;
+    
+    float: right;
+}
+    </style>
+</head>
+<body>
+    <div className="navbar  mb-4">
+        <a    
+            href="/games"
+            class="btn-navbar">
+                Inicio
+        </a>
+        <a href="#" class="span-lesandi"> Lesandi <a/>
+    </div>
+<h1>Con que sílaba empieza la siguiente imagen</h1>
+    <div class="Question"> 
+    
+    </div>
+    <div class="Answ">
+    </div>
+
+    <button onclick="nextQuestion()" id = "siguiente" class="sig hvr-grow-rotate">Siguiente Pregunta</button>
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Felicidades!!</h2>
+            <a class="close" href=# >×</a>
+            <div class="content-1">
+                Felicidades Te estas convirtiendo en un buen lector!
+            </div>
+            <br>
+            <button id="play-again"onclick="playAgain()">
+                Jugar otra vez!</a>
+            </button>
+            <br>
+            <button id="next-level"onclick="">
+                Regresar al menú</a>
+            </button>
+        </div>
+    </div>
+
+    
+    <div class="Contadores">
+    <p class="RightCSS">Respuestas Correctas: <span class = "Rightc">0</span></p>
+
+    <p class="RightCSS">Respuestas Incorrectas: <span class ="Wrongc">0</span></p>
+</div>
+    <script>
+        let modal = document.getElementById("popup1");
+        let RightAnswers;
+        let currentPosition = 0; 
+        let correcto =0;
+        let incorrecto =0;
+        var str =" ";
+        var Respuestas= ["SI", "NO"];
+        
+
+        const Cuestionary = [
+
+            {"Question" : "0",
+            "img": "imagenes/Cama.png", 
+            "img2": "imagenes/Oveja.png",
+            "Answers": "NO" //Objetos con las imagenes tenemos que remplazar.
+            },
+
+            {"Question" : "1",
+            "img": "imagenes/Gato.png", 
+            "img2": "imagenes/Pato.png",
+            "Answers": "SI"//Objetos con las imagenes tenemos que remplazar.
+            },
+
+            {"Question" : "2",
+            "img": "imagenes/Gorro.png", 
+            "img2": "imagenes/Zorro.png",
+            "Answers": "SI" //Objetos con las imagenes tenemos que remplazar.
+            },
+
+            {"Question" : "3",
+            "img": "imagenes/Tapa.png", 
+            "img2": "imagenes/Gusano.png",
+                "Answers": "NO" //Objetos con las imagenes tenemos que remplazar.
+            },
+
+            {"Question" : "4",
+            "img": "imagenes/Taza.png", 
+            "img2": "imagenes/Casa.png",
+                "Answers": "SI" //Objetos con las imagenes tenemos que remplazar.
+            },
+
+            {"Question" : "5",
+            "img": "imagenes/Campana.png", 
+            "img2": "imagenes/Mapa.png",
+                "Answers": "NO" //Objetos con las imagenes tenemos que remplazar.
+            },
+
+            {"Question" : "6",
+            "img": "imagenes/Mano.png", 
+            "img2": "imagenes/Gusano.png",
+                "Answers": "SI" //Objetos con las imagenes tenemos que remplazar.
+            },
+            {"Question" : "7",
+            "img": "imagenes/Oveja.png", 
+            "img2": "imagenes/Bee.png",
+                "Answers": "SI" //Objetos con las imagenes tenemos que remplazar.
+            }
+            
+        ];
+        var preguntas = [Cuestionary[0], Cuestionary[1], Cuestionary[2], Cuestionary[3]];
+        
+
+        const nextQuestion = _ => {
+            currentPosition++;
+            printHTMLQuestion(currentPosition);
+        }
+        
+        const random = _ =>{
+            console.log('Answ')
+            var q = Cuestionary;
+            q = q.sort((a,b) => Math.floor(Math.random()* 2) -1);
+            var c = [q[0], q[1], q[2], q[3]];
+            return c;
+        }
+        
+        const printHTMLQuestion = (currentPosition) => { 
+            if(currentPosition==0){
+                console.log('Answ')
+                preguntas = random();
+            }  
+            document.getElementById('siguiente').disabled = true;
+            const q = preguntas[currentPosition];
+
+            const HTMLRespuestasPosibles = Respuestas.map( CurrentR => `<p class="ans"><button class="hvr-pulse" onClick="EvaluateAnswers('${CurrentR}', this)">${CurrentR}</button> </p>`); //Se establece la respuesta correcta de la pregunta
+            const HTMLRespuestas = HTMLRespuestasPosibles.join(' ');
+
+            let HTMLQuestionCode = `<div class="Foto"><img src="${q.img}"/><img src="${q.img2}"/></div>`;
+            //let HTMLAns = `<div class= "contResp">${HTMLAnswers}</div>`;
+            let HTMLRESP = `<div class="contResp" >${HTMLRespuestas}</div>`;
+            document.querySelector('.Question').innerHTML = HTMLQuestionCode;
+            document.querySelector('.Answ').innerHTML = HTMLRESP;
+            
+        }
+
+        const EvaluateAnswers = (Answers, obj) => {
+            const q = preguntas[currentPosition];
+
+            document.querySelectorAll('.ans').forEach( a => a.classList.remove('Wrong'));
+            const parentP = obj.parentNode;
+            var indice =0;
+            console.log('Answ')
+            if(Answers==q.Answers) { //tostring
+                if(parentP.classList.contains('Right')){
+ 
+                }
+                else{
+                 parentP.classList.add('Right');
+                correcto++;
+                document.querySelector('.Rightc').innerHTML = correcto;
+                }
+                if(correcto>=1)
+                    document.getElementById('siguiente').disabled = false;
+                 if(correcto==4){
+                 modal.classList.add("show"); // Aqui termina el Juego, redireccionar a la pagina principal 
+                 closeModal();
+                 }
+
+            }
+                else {
+                    parentP.classList.add('Wrong');
+                    incorrecto++;
+                    document.querySelector('.Wrongc').innerHTML = incorrecto;
+                    
+                }
+        }
+        printHTMLQuestion(0); //Seleccionamos la pregunta #.
+        
+        function closeModal(){
+    closeicon.addEventListener("click", function(e){
+        modal.classList.remove("show");
+        startGame();
+    });
+}
+    </script>
+  
+
+</body>
+</html>

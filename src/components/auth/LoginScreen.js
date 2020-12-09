@@ -31,53 +31,48 @@ export const LoginScreen = () => {
 
     return (
         
-        <body className="bodyLogin">
+        <body>
             <NavbarREST/>
-        <span className='romboLogin'></span>
-        <span className='romboLogin'></span>
-        <span className='romboLogin'></span>
-        <span className='romboLogin'></span>
-        <span className='romboLogin'></span>
-    <div className="containerLogin">
+            <img alt="img-login" className="nubecita1" src="/imagenes/nube1.png" />
+            <img alt="img-login" className="nubecita2" src="/imagenes/nube2.png" />
+            <img alt="img-login" className="gatito" src="https://cdn.pixabay.com/photo/2019/09/14/09/44/cat-4475583_1280.png"></img>
+        <div className="containerLogin">
 
-        
-
-        <div className="row">
-            <div className="col-md-6 mt-5 mx-auto">
                 <form onSubmit={ handleLogin }>
-                    <h1 className="h1-login">Inicia Sesión</h1>
+                    <div className="div-h1">
+                    Iniciar Sesión   
+                    </div>
                     <div className="form-group">
                         <label className="label-login">Nombre de Usuario</label>
                         <input 
                             type="text"
-                            className="form-control"
+                            className="form-control-login"
                             name="lUserName"
                             placeholder=""
-                            //value={this.state.user_name}
                             onChange={ handleLoginInputChange } />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group-login">
                     <label className="label-login">Contraseña</label>
                         <input type="password"
-                            className="form-control"
+                            className="form-control-login"
                             name="lPassword"
                             placeholder=""
-                            //value={this.state.password}
                             onChange={ handleLoginInputChange } />
                     </div>
 
-                    <div className="form-group">
+                    <div className="form-group-login">
                         <input 
                             type="submit"
-                            className="btnSubmit"
+                            className="btn-login"
                             value="Login" 
                             />
                     </div>
                 </form>
-                <p>¿No tienes cuenta?, <a href="Register">Registrate aquí.</a></p>
+                <div className="div-p">
+                    ¿No tienes cuenta?, <a href="Register">Registrate aquí.</a>
+                </div>
             </div>
-        </div>
-    </div>  
+        <img alt="img-login" className="img-cesped" src="/imagenes/cesped.png" />
     </body>  
     )
 }

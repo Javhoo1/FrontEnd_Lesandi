@@ -38,10 +38,10 @@
     border-style: solid;
     border-width: 5px;
     color: #1d7e9b;
-    font-family: "Nerko one", cursive;
+    font-family: Roboto, cursive;
     font-size: 2vw;
     padding: 1vh 5vw;
-}
+}     
 
 .boton-home-login:hover{
     background: #1d7e9b;
@@ -63,7 +63,7 @@
     border-style: solid;
     border-width: 5px;
     color: #1d7e9b;
-    font-family: "Nerko one", cursive;
+    font-family: Roboto, cursive;
     font-size: 2vw;
     padding: 1vh 5vw;
 }
@@ -84,8 +84,124 @@
 }
 
 .h3-home h3{
-    font-family: "Nerko one", cursive;
+    font-family: Roboto, cursive;
     font-size: 8vh;
+}
+
+/* Para 1024px */  
+@media only screen and (max-width: 1024px) and (min-width: 981px) {  
+    .img-logo{
+        width: 50vw;
+    }
+    
+    .boton-home-login{
+        font-size: 10vw;
+    }
+
+    .boton-home-register{
+        font-size: 10vw;
+    }
+
+    .h3-home h3{
+        font-size: 8vw;
+    }
+}  
+
+/* Para 960px */  
+@media only screen and (max-width: 980px) and (min-width: 821px) {  
+    .img-logo{
+        width: 50vh;
+    }
+    
+    .boton-home-login{
+        font-size: 5vh;
+    }
+
+    .boton-home-register{
+        font-size: 5vh;
+    }
+
+    .h3-home h3{
+        font-size: 8vh;
+    }
+}  
+  
+/* Para 800px */  
+@media only screen and (max-width: 820px) and (min-width: 621px) {  
+    .img-logo{
+        width: 50vw;
+    }
+    
+    .boton-home-login{
+        font-size: 10vw;
+    }
+
+    .boton-home-register{
+        font-size: 10vw;
+    }
+
+    .h3-home h3{
+        font-size: 8vw;
+    }
+}
+  
+/* Para 600px */  
+@media only screen and (max-width: 620px) and (min-width: 501px) {  
+    .img-logo{
+        width: 50vw;
+    }
+    
+    .boton-home-login{
+        font-size: 10vw;
+    }
+
+    .boton-home-register{
+        font-size: 10vw;
+    }
+
+    .h3-home h3{
+        font-size: 8vw;
+    }
+}  
+  
+/* Para 480px */  
+@media only screen and (max-width: 500px) and (min-width: 341px) {  
+    .img-logo{
+        width: 40vh;
+    }
+    
+    .boton-home-login{
+        font-size: 4vh;
+    }
+
+    .boton-home-register{
+        font-size: 4vh;
+    }
+
+    .h3-home h3{
+        margin-top: 8vh;
+        font-size: 5vh;
+    }
+}  
+  
+/* Para 320px */  
+@media only screen and (max-width: 340px) and (min-width: 5px)  {  
+    .img-logo{
+        width: 40vh;
+    }
+    
+    .boton-home-login{
+        font-size: 10vw;
+    }
+
+    .boton-home-register{
+        font-size: 10vw;
+    }
+
+    .h3-home h3{
+        margin-top: 5vh;
+        font-size: 5vh;
+    }
 }
 
 /* BURBUJAS ANIMADAS */
@@ -95,13 +211,13 @@
     background: #ff8a2a;
     opacity: .3;
     position: absolute;
-    bottom: -150;
+    bottom: -50;
     animation: bubbles 3s linear infinite ;
 }
 
 .bubble:nth-child(1){
-    width: 80px;
-    height: 80px;
+    width: 3vw;
+    height: 3vw;
     left: 5%;
     animation-duration: 3s;
     animation-delay: 3s;
@@ -129,7 +245,7 @@
 .bubble:nth-child(4){
     width: 50px;
     height: 50px;
-    left: 90%;
+    left: 65%;
     animation-duration: 6s;
     animation-delay: 3s;
     z-index: 70;
@@ -138,7 +254,7 @@
 .bubble:nth-child(5){
     width: 70px;
     height: 70px;
-    left: 65%;
+    left: 10%;
     animation-duration: 3s;
     animation-delay: 1s;
     z-index: 65;

@@ -16,8 +16,8 @@ import { startChecking } from '../actions/auth';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 
-
 /* FIN JUEGOS */
+import './carga.css';
 
 export const AppRouter = () => {
 
@@ -30,14 +30,25 @@ export const AppRouter = () => {
 
     if ( checking ) {
         // ARREGLAR ESTO DESPUES,
-        return (<h5>Cargando...</h5>);
+        return (
+                <div className="cargando">
+                    Cargando
+                    
+                    <div className="box-cargando1"></div>
+                    <div className="box-cargando2"></div>
+                    <div className="box-cargando3"></div>
+                </div>
+        );
     }
 
     return (
         <Router>
             <div>
                 <Switch>
-
+                    <PublicRoute
+                    path="/juego11"
+                    
+                    />
                     <PublicRoute
                         exact
                         path="/"
@@ -65,7 +76,6 @@ export const AppRouter = () => {
                         component={ LesandiScreen } 
                         isAuthenticated= { !!uid } //Convertir String en boolean
                     />  
-                    
 
                     <Redirect to="/games" />
                 </Switch>
