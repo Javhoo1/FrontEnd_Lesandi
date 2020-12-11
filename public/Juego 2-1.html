@@ -278,6 +278,12 @@
 </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
+        let sonidoCorrecto = new Audio ('sonidos/correcto.mp3');
+        let sonidoIncorrecto = new Audio ('sonidos/incorrecto.mp3');
+        let sonidoGritos = new Audio ('sonidos/gritos.mp3');
+        let juego21 = new Audio ('sonidos/juego2-1.mp3');
+    </script>
+    <script>
         let modal = document.getElementById("popup1");
         let RightAnswers;
         let currentPosition = 0; 
@@ -354,6 +360,7 @@
         }
         
         const printHTMLQuestion = (currentPosition) => { 
+            juego21.play();
             if(currentPosition==0){
                 console.log('Answ')
                 preguntas = random();
@@ -384,12 +391,20 @@
  
                 }
                 else{
-                 parentP.classList.add('Right');
-                correcto++;
-                document.querySelector('.Rightc').innerHTML = correcto;
+                    parentP.classList.add('Right');
+                    correcto++;
+                    document.querySelector('.Rightc').innerHTML = correcto;
                 }
-                if(correcto>=1)
-                    document.getElementById('siguiente').disabled = false;
+                if(correcto>=1){
+                    document.getElementById('siguiente').disabled = false;  
+                    Swal.fire({
+                        icon: 'success',
+                        tittle: '¡Genial!',
+                        text: '¡Vamos por el siguiente nivel!',
+                        footer: ':)'
+                    })
+                    sonidoGritos.play();
+                }
                  if(correcto==4){
                  modal.classList.add("show"); // Aqui termina el Juego, redireccionar a la pagina principal 
                  closeModal();
@@ -397,6 +412,7 @@
 
             }
                 else {
+                    sonidoIncorrecto.play();
                     parentP.classList.add('Wrong');
                     incorrecto++;
                     document.querySelector('.Wrongc').innerHTML = incorrecto;

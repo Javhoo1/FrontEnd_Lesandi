@@ -293,6 +293,18 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+        <script>
+            var sonidoCorrecto = new Audio ('sonidos/correcto.mp3');
+        </script>
+        <script>
+            var sonidoIncorrecto = new Audio ('sonidos/incorrecto.mp3');
+        </script>
+        <script>
+            var sonidoGritos = new Audio ('sonidos/gritos.mp3');
+        </script>
+        <script>
+            var sonidojuego12 = new Audio ('sonidos/juego1-2.mp3');
+        </script>
     <script>
 
         let RightAnswers;
@@ -304,7 +316,6 @@
         var Respuestas= ['A', 'E', 'I', 'O', 'U'];
         let modal = document.getElementById("popup1");
         var currentPosition=0;
-        
 
         const Cuestionary = [
 
@@ -340,7 +351,7 @@
             letra = letra.sort((a,b) => Math.floor(Math.random()* 2) -1);
         }
         const printHTMLQuestion = (i) => {
-            
+            sonidojuego12.play();
             document.getElementById('siguiente').disabled = true;
             const q = Cuestionary[letra[currentPosition]];
             let a = q.Answers;
@@ -372,24 +383,28 @@
                     
                 }
                 else{
+                    sonidoCorrecto.play();
                  parentP.classList.add('Right');
                 correcto++;
                 document.querySelector('.Rightc').innerHTML = correcto;
                 }
-                if(correcto>=1)
+                if(correcto>=1){
+                    document.getElementById('siguiente').disabled = false;  
                     Swal.fire({
-                        icon: 'info',
+                        icon: 'success',
                         tittle: '¡Genial!',
                         text: '¡Vamos por el siguiente nivel!',
                         footer: ':)'
                     })
-                    document.getElementById('siguiente').disabled = false;
+                    sonidoGritos.play();
+                }
                  if(correcto==3){
                  modal.classList.add("show");  // Aqui termina el Juego, redireccionar a la pagina principal 
                  closeModal();
                  }
             }
                 else {
+                    sonidoIncorrecto.play();
                     parentP.classList.add('Wrong');
                     incorrecto++;
                     document.querySelector('.Wrongc').innerHTML = incorrecto;

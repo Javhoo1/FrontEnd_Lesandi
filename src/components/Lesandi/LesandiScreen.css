@@ -212,7 +212,7 @@
     font-size: 4.5vh;
     font-family: Roboto, cursive;
     margin: 0 30px;
-    padding: 55px 0 0 0;
+    padding: 8vh 0 0 0;
     height: 110px;
   }
   .ih-item.circle.effect9 .info p {
@@ -476,7 +476,7 @@
       font-size: 3vh;
     }
     .navbar-span, .btn-navbar{
-      font-size: 5vw;
+      font-size: 3vw;
     }
       /*---------FIN CSS NAVBAR----------*/
     .div-titulo p{
@@ -500,20 +500,21 @@
       transform: scale(1);
     }
     .ih-item.circle.effect9 .info h3{
-      font-size: 3vh;
-      margin: 0;
+      font-size: 5v;
+      margin: 4vh 0 4vh 0;
       padding-top: 4vh;
       height: auto;
     }
     .ih-item.circle.effect9 .info p{
-      font-size: 2vh;
-      margin: 0;
-      padding-top: 0vh;
+      font-size: 4vh;
+      margin-top: 3vh;
+      margin-bottom: 3vh;
+      padding-top: 3vh;
     }
     .ih-item.circle.effect9 .info a{
       font-size: 3vh;
-      margin: 0;
-      padding-top: 0vh;
+      margin-top: 2vh;
+      padding: 2vh 4vh;
     }
   }  
   
@@ -675,19 +676,17 @@
   /* Para 320px */  
   @media only screen and (max-width: 340px) and (min-width: 5px)  {  
     .navbar-inicio{
-      height: 10vh;
+      height: 3vw;
     }
-    
     .btn-navbar-inicio{
-      margin-left: 5vh;
-      font-size: 3vh;
+      margin-left: 5vw;
+      font-size: 2vw;
     }
-  
     .navbar-span{
-      font-size: 3vh;
+      font-size: 3vw;
     }
     .div-titulo p{
-      font-size: 5vh;
+      font-size: 5vw;
     }
     .div-games-left, .div-games-center ,.div-games-right{
       width: 50vw;
@@ -707,19 +706,19 @@
       transform: scale(1);
     }
     .ih-item.circle.effect9 .info h3{
-      font-size: 3vh;
+      font-size: 1vw;
       margin: 0;
-      padding-top: 4vh;
+      padding-top: 1vw;
       height: auto;
     }
     .ih-item.circle.effect9 .info p{
-      font-size: 2vh;
+      font-size: 4vw;
       margin: 0;
-      padding-top: 0vh;
+      padding-top: 0vw;
     }
     .ih-item.circle.effect9 .info a{
-      font-size: 3vh;
+      font-size: 5vw;
       margin: 0;
-      padding-top: 0vh;
+      padding-top: 0vw;
     }
   }

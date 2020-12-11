@@ -101,12 +101,12 @@
             width: 25vw;
             font-family: Roboto, cursive;
             font-size: 2vw;
-            color: #23385c;
+            color: #32cf01;
             float: left;
         }
         .WrongCSS{
             width: 25vw;
-            color: #32cf01;
+            color: #F94024;
             font-family: Roboto, cursive;
             font-size: 2vw;
             float: right;
@@ -256,6 +256,30 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        var sonidoCorrecto = new Audio ('sonidos/correcto.mp3');
+    </script>
+    <script>
+        var sonidoIncorrecto = new Audio ('sonidos/incorrecto.mp3');
+    </script>
+    <script>
+        var sonidoGritos = new Audio ('sonidos/gritos.mp3');
+    </script>
+    <script>
+        var sonidojuego111 = new Audio ('sonidos/juego1-1-a.mp3');
+    </script>
+    <script>
+        var sonidojuego112 = new Audio ('sonidos/juego1-1-e.mp3');
+    </script>
+    <script>
+        var sonidojuego113 = new Audio ('sonidos/juego1-1-i.mp3');
+    </script>
+    <script>
+        var sonidojuego114 = new Audio ('sonidos/juego1-1-o.mp3');
+    </script>
+    <script>
+        var sonidojuego115 = new Audio ('sonidos/juego1-1-u.mp3');
+    </script>
 
     <script>
 
@@ -266,31 +290,31 @@
         var letra= ['A', 'E', 'I', 'O', 'U'];
         let modal = document.getElementById("popup1");
         let bntSiguiente = document.getElementById('siguiente');
-        
+        sonidojuego111.play();
 
         const Cuestionary = [
 
-            {"Question" : "Selecciona la imagen que inicie con la vocal 'A'.",
+            {"Question" : "Selecciona las 3 imágenes que inician con la vocal 'A'.",
                 "Answers": ["Oso", "Tigre", "Agua", "Manzana", "Araña", "Casa", "Arbol", "Rana", "Violin", "Cebolla", "Espejo", "Ocho"], //Objetos con las imagenes tenemos que remplazar.
-                "CorrectA": [""]
+                "CorrectA": [""],
             },
 
-            {"Question" : "Selecciona la imagen que inicie con la vocal 'E'.",
+            {"Question" : "Selecciona las 3 imágenes que inician con la vocal 'E'.",
                 "Answers": ["Colores", "Escuela", "Gorro", "Sopa", "Barco", "Flor", "Elefante", "Camion", "Estrella", "CupCake", "Pescado", "Jirafa"], 
                 "CorrectA": [""]//Objetos con las imagenes tenemos que remplazar.
             },
 
-            {"Question" : "Selecciona la imagen que inicie con la vocal 'I'.",
+            {"Question" : "Selecciona las 3 imágenes que inician con la vocal 'I'.",
                 "Answers": ["Iguana", "Pera", "Coca", "Iglu", "Carro", "Leon", "Banana", "Isla", "Helicoptero", "Vaso", "Unicornio", "Uno"], 
                 "CorrectA": [""] //Objetos con las imagenes tenemos que remplazar.
             },
 
-            {"Question" : "Selecciona la imagen que inicie con la vocal 'O'.",
+            {"Question" : "Selecciona las 3 imágenes que inician con la vocal 'O'.",
                 "Answers": ["Araña", "Oveja", "Botella", "Banana", "Zapato", "Ojo", "Manzana", "Pescado", "Oso", "Termo", "Iguana", "Casa"],
                 "CorrectA": [""]  //Objetos con las imagenes tenemos que remplazar.
             },
 
-            {"Question" : "Selecciona la imagen que inicie con la vocal 'U'.",
+            {"Question" : "Selecciona las 3 imágenes que inician con la vocal 'U'.",
                 "Answers": ["Uno", "Uva", "Comida", "Uña", "Tenis", "Indio", "Iglesia", "Perro", "Anillo", "Television", "Armadillo", "Sopa"], 
                 "CorrectA": [""] //Objetos con las imagenes tenemos que remplazar.
             }
@@ -298,22 +322,36 @@
         ];
 
         const nextQuestion = _ => {
+            
             currentPosition++;
             printHTMLQuestion(currentPosition);
+            console.log(currentPosition);
+            if(currentPosition==1){
+                sonidojuego112.play();
+            }
+            if(currentPosition==2){
+                sonidojuego113.play();
+            }
+            if(currentPosition==3){
+                sonidojuego114.play();
+            }
+            if(currentPosition==4){
+                sonidojuego115.play();
+            }
         }
         
-        const printHTMLQuestion = (i) => {   
+        const printHTMLQuestion = (i) => {
             document.getElementById('siguiente').disabled = true;
             const q = Cuestionary[i];
             let a = q.Answers;
             a = a.sort((a,b) => Math.floor(Math.random()* 3) -1);
             const HTMLAnswersArray = a.map( CurrentA => `<li class="ans"><button onClick="EvaluateAnswers('${CurrentA}', this)"><img src="imagenes/${CurrentA}.jpg" /> </button> </li>`); //Se establece la respuesta correcta de la pregunta
             const HTMLAnswers = HTMLAnswersArray.join(' ');
-
             let HTMLQuestionCode = `<p>${q.Question}</p>`;
             let HTMLAnsCode = `<div>${HTMLAnswers}</div>`;
             document.querySelector('.Question').innerHTML = HTMLQuestionCode; 
             document.querySelector('.Resp').innerHTML = HTMLAnsCode;
+
         }
 
         const EvaluateAnswers = (Answers, obj) => {
@@ -327,26 +365,28 @@
  
                 }
                 else{
-                 parentP.classList.add('Right');
-                correcto++;
-                document.querySelector('.Rightc').innerHTML = correcto;
+                    sonidoCorrecto.play();
+                    parentP.classList.add('Right');
+                    correcto++;
+                    document.querySelector('.Rightc').innerHTML = correcto;
                 }
-                if(correcto%3==0)
-                Swal.fire({
-                    icon: 'info',
-                    tittle: '¡Genial!',
-                    text: '¡Vamos por el siguiente nivel!',
-                    footer: ':)'
-                })
-
-                    document.getElementById('siguiente').disabled = false;
-                    
-                 if(correcto==15){
-                 modal.classList.add("show");  // Aqui termina el Juego, redireccionar a la pagina principal 
-                 closeModal();
-                 }
+                if(correcto%3==0){
+                    sonidoGritos.play();
+                    document.getElementById('siguiente').disabled = false;  
+                    Swal.fire({
+                        icon: 'success',
+                        tittle: '¡Genial!',
+                        text: '¡Vamos por el siguiente nivel!',
+                        footer: ':)'
+                    })
+                }
+                if(correcto==15){
+                    modal.classList.add("show");  // Aqui termina el Juego, redireccionar a la pagina principal 
+                    closeModal();
+                }
             }
                 else {
+                    sonidoIncorrecto.play();
                     parentP.classList.add('Wrong');
                     incorrecto++;
                     document.querySelector('.Wrongc').innerHTML = incorrecto;

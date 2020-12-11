@@ -273,7 +273,7 @@
             <span class="lesandi">Lesandi</span>
         </div>
         
-        <div class="titulo">Selecciona las palabras que rimen entre si.</div>
+        <div class="titulo">Completa la frase en el orden correcto.</div>
 
     <div clas = "Contenedor">
         <div class="tabla">
@@ -310,6 +310,12 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script>
+            let sonidoCorrecto = new Audio ('sonidos/correcto.mp3');
+            let sonidoIncorrecto = new Audio ('sonidos/incorrecto.mp3');
+            let sonidoGritos = new Audio ('sonidos/gritos.mp3');
+            let juego31 = new Audio ('sonidos/juego3-1.mp3');
+        </script>
     <script>
 
         let RightAnswers;
@@ -360,6 +366,7 @@
         }
 
         const printHTMLQuestion = (i) => {
+            juego31.play();
             respUsuario ="Frase: ";
             let HTMLP = `<p>${respUsuario}</p>`;
             document.querySelector('.Question').innerHTML = HTMLP; 
@@ -406,15 +413,17 @@
                 correcto++;
                 document.querySelector('.Rightc').innerHTML = correcto;
                 currentPosRespuestas++;
+                sonidoCorrecto.play();
                 }
                 if(currentPosRespuestas==s){
+                    document.getElementById('siguiente').disabled = false;  
                     Swal.fire({
-                        icon: 'info',
+                        icon: 'success',
                         tittle: '¡Genial!',
                         text: '¡Vamos por el siguiente nivel!',
                         footer: ':)'
                     })
-                    document.getElementById('siguiente').disabled = false;
+                    sonidoGritos.play();
                     currentPos++;
                 }
                  if(currentPos==5){

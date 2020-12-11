@@ -10,7 +10,7 @@ export const LesandiScreen = () => {
         <div>
             <Navbar />
             <div className="div-titulo">
-                <p>SELECCIONA TU GRADO</p>
+                <p>SELECCIONA TU GRADO ESCOLAR</p>
             </div>
             <div className='div-games-left'>
             

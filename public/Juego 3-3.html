@@ -45,12 +45,12 @@
         
         }
         .Sub {
-           background-color: #02a88d; 
+            background:#23385c; 
             color: white;
             text-align: center;            
-            font-size: 15px;
+            font-size: 1.5vw;
             align-items: center;
-            width: 20%;
+            width: 30%;
             cursor: pointer;
             font-family: 'roboto';
             margin-left: 6%;
@@ -213,15 +213,25 @@
         }
 
     input[type=text] {
-  width: 70%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
   border: none;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid #F94428;
+  color: #F94428;
+  font-family: Roboto, cursive;
+  font-weight: 500;
+  font-size: 1vw;
 }
 .myForm{
-    width:25%;
+    width:40%;
+}
+.fr, .pr{
+    font-family: Roboto, cursive;
+    font-weight: 500;
+    font-size: 1.5vw;
+    color: #23385c;
 }
 .divnavbar{
             width: 100vw;
@@ -242,7 +252,7 @@
             font-size: 4vh;
             color: #23385c;
             float: right;
-            margin-right: 5vh;
+            margin-right: 5vw;
         }
         .siguiente{
             text-align: center;
@@ -278,7 +288,7 @@
 
         <form name = "myForm" class = "myForm"> 
             <input type="text" name="fname" id="box">
-            <input type="button" onclick="EvaluateAnswers()" value="submit" id="Sub" class="Sub hvr-grow">
+            <input type="button" onclick="EvaluateAnswers()" value="Responder" id="Sub" class="Sub hvr-grow">
         </form> 
 
     </div>
@@ -310,6 +320,12 @@
         <p class="WrongCSS">Respuestas Incorrectas: <span class ="Wrongc">0</span></p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        let sonidoCorrecto = new Audio ('sonidos/correcto.mp3');
+        let sonidoIncorrecto = new Audio ('sonidos/incorrecto.mp3');
+        let sonidoGritos = new Audio ('sonidos/gritos.mp3');
+        let juego33 = new Audio ('sonidos/juego3-3.mp3');
+    </script>
 
     <script>
         const Id = document.getElementById('Id');
@@ -358,6 +374,7 @@
         }
         
         const printHTMLQuestion = (currentPosition) => {   
+            juego33.play();
             document.getElementById('Sub').disabled = false;
             document.getElementById('siguiente').disabled = true;
             sig=false;
@@ -388,20 +405,22 @@
             var n = nombrevariable.indexOf(r);
             console.log(n + " " + nombrevariable + " " + r  + " " + currentPosition);
             if(n>-1){ 
-                    document.getElementById('Sub').disabled = true;
-                    correcto++;
-                    sig=true;
-                    document.querySelector('.Rightc').innerHTML = correcto;
+                sonidoCorrecto.play();
+                document.getElementById('Sub').disabled = true;
+                correcto++;
+                sig=true;
+                document.querySelector('.Rightc').innerHTML = correcto;
 
-                if(sig)
-                Swal.fire({
-                        icon: 'info',
+                if(sig){
+                    document.getElementById('siguiente').disabled = false;  
+                    Swal.fire({
+                        icon: 'success',
                         tittle: '¡Genial!',
                         text: '¡Vamos por el siguiente nivel!',
                         footer: ':)'
                     })
-                    document.getElementById('siguiente').disabled = false;
-
+                    sonidoGritos.play();
+                }
                  if(correcto==5){
                  modal.classList.add("show"); // Aqui termina el Juego, redireccionar a la pagina principal 
                  closeModal();
@@ -409,6 +428,7 @@
 
                 }
                     else if(nombrevariable!=""){
+                        sonidoIncorrecto.play();
                     incorrecto++;
                     document.querySelector('.Wrongc').innerHTML = incorrecto; 
                 }

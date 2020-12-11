@@ -47,9 +47,13 @@
         .ans{
         width: 40vw;
         margin-top: 5.5%;
+        font-size: 1vw;
+        font-family: Roboto, cursive;
+        font-weight: 500;
+        color: #23385c;
         }
         .ans button {
-           background-color: #02a88d; 
+           background:#23385c; 
             color: white;
             text-align: center;            
             font-size: 15px;
@@ -248,7 +252,7 @@
 <body>
     <div class="divnavbar">
         <a href="games" class="volver"><i class="fa fa-arrow-left" aria-hidden="true"></i>Volver</a>
-        <spam class="titulo">Selecciona las frases verdaderas</span>
+        <span class="titulo">Selecciona las frases verdaderas</span>
         <span class="lesandi">Lesandi</span>
     </div>
 
@@ -292,6 +296,12 @@
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+    let sonidoCorrecto = new Audio ('sonidos/correcto.mp3');
+    let sonidoIncorrecto = new Audio ('sonidos/incorrecto.mp3');
+    let sonidoGritos = new Audio ('sonidos/gritos.mp3');
+    let juego32 = new Audio ('sonidos/juego3-2.mp3');
+</script>
 
     <script>
         let modal = document.getElementById("popup1");
@@ -337,6 +347,7 @@
         }
         
         const printHTMLQuestion = (i) => {   
+            juego32.play();
             document.getElementById('siguiente').disabled = true;
             const q = Cuestionary[i];
             let ver = q.Tru;
@@ -379,19 +390,23 @@
                     console.log("Ya es correcto"); // Borrar
                 }
                 else{
+                    sonidoCorrecto.play();
                     console.log("correcto nuevo"); // Borrar
                  parentP.classList.add('Right');
                 correcto++;
                 document.querySelector('.Rightc').innerHTML = correcto;
                 }
-                if(correcto>=7)
-                Swal.fire({
-                        icon: 'info',
+                if(correcto>=7){
+                    
+                    document.getElementById('siguiente').disabled = false;  
+                    Swal.fire({
+                        icon: 'success',
                         tittle: '¡Genial!',
                         text: '¡Vamos por el siguiente nivel!',
                         footer: ':)'
                     })
-                    document.getElementById('siguiente').disabled = false;
+                    sonidoGritos.play();
+                }
                  if(correcto==7){
                  modal.classList.add("show"); // Aqui termina el Juego, redireccionar a la pagina principal 
                  closeModal();
@@ -399,6 +414,7 @@
 
             }
                 else {
+                    sonidoIncorrecto.play();
                     console.log("Mal"); // Borrar
                     parentP.classList.add('Wrong');
                     incorrecto++;

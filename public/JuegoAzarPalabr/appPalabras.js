@@ -24,6 +24,11 @@ let matchedCard = document.getElementsByClassName("match");
 
  // Cartas abiertas array
 var openedCards = [];
+ // Sonidos //
+ let sonidoCorrecto = new Audio ('sonidos/correcto.mp3');
+ let sonidoIncorrecto = new Audio ('sonidos/incorrecto.mp3');
+ let sonidoGritos = new Audio ('sonidos/gritos.mp3');
+ let juego22 = new Audio ('sonidos/juego2-2.mp3');
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -42,7 +47,7 @@ function shuffle(array) {
 document.body.onload = startGame();
 
 function startGame(){
- 
+    juego22.play();
     openedCards = [];
 
     cards = shuffle(cards);
@@ -88,6 +93,7 @@ function cardOpen() {
 };
 
 function matched(){
+    sonidoCorrecto.play();
     openedCards[0].classList.add("match", "disabled");
     openedCards[1].classList.add("match", "disabled");
     openedCards[0].classList.remove("show", "open", "no-event");
@@ -96,6 +102,7 @@ function matched(){
 }
 
 function unmatched(){
+    sonidoIncorrecto.play();
     openedCards[0].classList.add("unmatched");
     openedCards[1].classList.add("unmatched");
     disable();
@@ -167,6 +174,7 @@ function startTimer(){
 
 function congratulations(){
     if (matchedCard.length == 16){
+        sonidoCorrecto.play();
         clearInterval(interval);
         finalTime = timer.innerHTML;
         modal.classList.add("show");

@@ -276,7 +276,18 @@
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
+    <script>
+        var sonidoCorrecto = new Audio ('sonidos/correcto.mp3');
+    </script>
+    <script>
+        var sonidoIncorrecto = new Audio ('sonidos/incorrecto.mp3');
+    </script>
+    <script>
+        var sonidoGritos = new Audio ('sonidos/gritos.mp3');
+    </script>
+    <script>
+        var juego13 = new Audio ('sonidos/juego1-3.mp3');
+    </script>
     <script>
         let modal = document.getElementById("popup1");
         let RightAnswers;
@@ -323,7 +334,8 @@
             Cuestionary = Cuestionary.sort((a,b) => Math.floor(Math.random()* 2) -1);
         }
         
-        const printHTMLQuestion = (i) => {   
+        const printHTMLQuestion = (i) => { 
+            juego13.play();
             document.getElementById('siguiente').disabled = true;
             const q = Cuestionary[i];
             let a = q.Answers;
@@ -345,22 +357,32 @@
             var indice =0;
             if(str.indexOf(Answers)==0) { //tostring
                 if(parentP.classList.contains('Right')){
- 
+
                 }
                 else{
-                 parentP.classList.add('Right');
-                correcto++;
-                document.querySelector('.Rightc').innerHTML = correcto;
+                    sonidoCorrecto.play();
+                    parentP.classList.add('Right');
+                    correcto++;
+                    document.querySelector('.Rightc').innerHTML = correcto;
                 }
-                if(correcto>=1)
-                    document.getElementById('siguiente').disabled = false;
-                 if(correcto==5){
-                 modal.classList.add("show"); // Aqui termina el Juego, redireccionar a la pagina principal 
-                 closeModal();
-                 }
+                if(correcto>=1){
+                    document.getElementById('siguiente').disabled = false;  
+                    Swal.fire({
+                        icon: 'success',
+                        tittle: '¡Genial!',
+                        text: '¡Vamos por el siguiente nivel!',
+                        footer: ':)'
+                    })
+                    sonidoGritos.play();
+                }
+                if(correcto==5){
+                    modal.classList.add("show"); // Aqui termina el Juego, redireccionar a la pagina principal 
+                    closeModal();
+                }
 
-            }
+                }
                 else {
+                    sonidoIncorrecto.play();
                     parentP.classList.add('Wrong');
                     incorrecto++;
                     document.querySelector('.Wrongc').innerHTML = incorrecto;
